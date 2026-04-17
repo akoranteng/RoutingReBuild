@@ -1,73 +1,35 @@
-﻿ASP.NET Core Routing 101 — Multi‑Project Demo Suite
-This solution contains three independent ASP.NET Core 10 projects demonstrating routing fundamentals across the three major hosting models: Minimal APIs, MVC Controllers, and Razor Pages.
-Each project is intentionally small, focused, and curriculum‑ready for teaching, demos, and modular learning.
+📘 Module 01 — Minimal API Routing Basics
+What This Module Demonstrates
+- How ASP.NET Core maps URLs to Minimal API endpoints
+- Basic HTTP verbs: MapGet, MapPost, MapPut, MapDelete
+- Route parameters (e.g., /products/{id})
+- Query strings (e.g., /search?term=abc)
+- Returning JSON automatically
+- Using typed results for modern .NET 8/10 patterns
+- Running and testing endpoints in Swagger UI
+🧩 Endpoints in This Module
+GET /hello
+Returns a simple JSON greeting.
+GET /products/{id}
+Demonstrates route parameters and typed results.
+GET /search
+Demonstrates query string handling.
+POST /products
+Demonstrates receiving JSON input.
+PUT /products/{id}
+Demonstrates updating a resource.
+DELETE /products/{id}
+Demonstrates deleting a resource.
 
-📁 Included Projects
-1. MinimalApiDemo
-Demonstrates:
-
-Basic route mapping with MapGet, MapPost, MapPut, MapDelete
-
-Route parameters and constraints
-
-Grouped routes
-
-Minimal API conventions
-
-2. MvcRoutingDemo
-1. Demonstrates:
-
-Controller‑based routing
-
-Attribute routing
-
-Conventional routing patterns
-
-Route tokens and defaults
-
-Demonstrates:
-
-Controller‑based routing
-
-Attribute routing
-
-Conventional routing patterns
-
-Route tokens and defaults
-🧭 Solution Purpose
-This solution is designed as a teaching asset for understanding routing across the ASP.NET Core platform. Each project is isolated so learners can focus on one routing model at a time while still seeing how the models relate.
-
-🚀 How to Run
-From the solution root:
-
-Code
-cd MvcRoutingDemo
+ How to Run This Module
 dotnet run
 
-Code
-cd RazorPagesRoutingDemo
-dotnet run
 
-Each project runs independently on its own Kestrel port.
-📚 What This Project Demonstrates
-Differences between Minimal API, MVC, and Razor Pages routing
+Then open Swagger UI:
+https://localhost:5001/swagger
 
-How ASP.NET Core resolves endpoints
+⭐ Add  Program.cs structure for Module 01
 
-How route templates are parsed
-
-How route precedence works
-
-How to structure routing for clarity and maintainability
-
-🧩 Folder Structure
-AspNetCoreRoutingRebuild/
-│
-├── MinimalApiDemo/
-├── MvcRoutingDemo/
-├── RazorPagesRoutingDemo/
-│
-└── AspNetCoreRoutingRebuild.sln
 
 
 

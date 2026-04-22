@@ -15,6 +15,7 @@ C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\RazorPagesRout
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\RazorPagesRoutingDemo.MvcApplicationPartsAssemblyInfo.cache
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\RazorPagesRoutingDemo.RazorAssemblyInfo.cache
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\RazorPagesRoutingDemo.RazorAssemblyInfo.cs
+C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\RazorPagesRoutingDemo.sourcelink.json
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
@@ -90,6 +91,7 @@ C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\staticwebasset
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\staticwebassets.development.json
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\swae.build.ex.cache
+C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\RazorPagesRoutingDemo.dll
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\refint\RazorPagesRoutingDemo.dll
 C:\MSlearn\RoutingReBuild\RazorPagesRoutingDemo\obj\Debug\net10.0\RazorPagesRoutingDemo.pdb

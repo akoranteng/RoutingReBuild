@@ -12,6 +12,7 @@ C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\MvcRoutingDemo.Assemb
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\MvcRoutingDemo.AssemblyInfo.cs
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\MvcRoutingDemo.csproj.CoreCompileInputs.cache
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\MvcRoutingDemo.MvcApplicationPartsAssemblyInfo.cache
+C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\MvcRoutingDemo.sourcelink.json
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
@@ -21,6 +22,7 @@ C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\staticwebassets.build
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\staticwebassets.development.json
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\swae.build.ex.cache
+C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\MvcRoutingDemo.dll
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\refint\MvcRoutingDemo.dll
 C:\MSlearn\RoutingReBuild\MvcRoutingDemo\obj\Debug\net10.0\MvcRoutingDemo.pdb

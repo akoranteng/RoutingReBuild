@@ -1,73 +1,110 @@
-﻿ASP.NET Core Routing 101 — Multi‑Project Demo Suite
-This solution contains three independent ASP.NET Core 10 projects demonstrating routing fundamentals across the three major hosting models: Minimal APIs, MVC Controllers, and Razor Pages.
-Each project is intentionally small, focused, and curriculum‑ready for teaching, demos, and modular learning.
+# MinimalApiDemo – Geocoding + Weather + Forecast Services
 
-📁 Included Projects
-1. MinimalApiDemo
-Demonstrates:
+This branch implements a modular Minimal API that integrates:
+- Reverse geocoding (Nominatim)
+- Current weather (Open-Meteo)
+- Multi‑day forecast (Open-Meteo)
+- Clean service architecture with DI
+- Strongly typed models for all responses
 
-Basic route mapping with MapGet, MapPost, MapPut, MapDelete
+The goal is to demonstrate clean routing, service separation, and real‑world API consumption in a Minimal API format.
 
-Route parameters and constraints
+---
 
-Grouped routes
+## 📁 Project Structure
 
-Minimal API conventions
-
-2. MvcRoutingDemo
-1. Demonstrates:
-
-Controller‑based routing
-
-Attribute routing
-
-Conventional routing patterns
-
-Route tokens and defaults
-
-Demonstrates:
-
-Controller‑based routing
-
-Attribute routing
-
-Conventional routing patterns
-
-Route tokens and defaults
-🧭 Solution Purpose
-This solution is designed as a teaching asset for understanding routing across the ASP.NET Core platform. Each project is isolated so learners can focus on one routing model at a time while still seeing how the models relate.
-
-🚀 How to Run
-From the solution root:
-
-Code
-cd MvcRoutingDemo
-dotnet run
-
-Code
-cd RazorPagesRoutingDemo
-dotnet run
-
-Each project runs independently on its own Kestrel port.
-📚 What This Project Demonstrates
-Differences between Minimal API, MVC, and Razor Pages routing
-
-How ASP.NET Core resolves endpoints
-
-How route templates are parsed
-
-How route precedence works
-
-How to structure routing for clarity and maintainability
-
-🧩 Folder Structure
-AspNetCoreRoutingRebuild/
+MinimalApiDemo/
 │
-├── MinimalApiDemo/
-├── MvcRoutingDemo/
-├── RazorPagesRoutingDemo/
+├── Models/
+│   ├── ReverseGeocodingResponse.cs
+│   ├── WeatherResponse.cs
+│   ├── ForecastResponse.cs
 │
-└── AspNetCoreRoutingRebuild.sln
+├── Services/
+│   ├── ReverseGeocodingService.cs
+│   ├── WeatherService.cs
+│   ├── ForecastService.cs
+│
+└── Program.cs
 
+Each service is isolated, testable, and registered via dependency injection.
+
+---
+
+## 🌍 Reverse Geocoding (Nominatim)
+
+### **Endpoint**
+`GET /reverse-geocode?lat={lat}&lon={lon}`
+
+### **Description**
+Takes latitude/longitude and returns:
+- City
+- State
+- Country
+- Display name
+
+### **Example Response**
+```json
+{
+  "city": "Boston",
+  "state": "Massachusetts",
+  "country": "United States",
+  "displayName": "Boston, Suffolk County, Massachusetts, USA"
+}
+
+☀️ Current Weather (Open-Meteo)
+Endpoint
+GET /weather?lat={lat}&lon={lon}
+
+Description
+Returns current:
+
+Temperature
+
+Wind speed
+
+Weather code
+
+Time of observation
+
+Example Response
+{
+  "temperature": 12.3,
+  "windspeed": 5.4,
+  "weathercode": 3,
+  "time": "2024-04-21T15:00"
+}
+
+📅 Multi‑Day Forecast (Open-Meteo)
+Endpoint
+GET /forecast?lat={lat}&lon={lon}&days={n}
+
+Description
+Returns daily:
+
+Max temperature
+
+Min temperature
+
+Weather code
+
+Example Response
+{
+  "days": [
+    { "date": "2024-04-22", "tempMax": 15.2, "tempMin": 7.1, "weathercode": 2 },
+    { "date": "2024-04-23", "tempMax": 17.8, "tempMin": 8.4, "weathercode": 3 }
+  ]
+}
+
+🧩 Dependency Injection Setup
+builder.Services.AddScoped<ReverseGeocodingService>();
+builder.Services.AddScoped<WeatherService>();
+builder.Services.AddScoped<ForecastService>();
+
+Each service uses HttpClient and strongly typed models for clean deserialization.
+🚀 Routing Overview
+app.MapGet("/reverse-geocode", async (...) => { ... });
+app.MapGet("/weather", async (...) => { ... });
+app.MapGet("/forecast", async (...) => { ... });
 
 

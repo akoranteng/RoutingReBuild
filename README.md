@@ -1,73 +1,101 @@
-﻿ASP.NET Core Routing 101 — Multi‑Project Demo Suite
-This solution contains three independent ASP.NET Core 10 projects demonstrating routing fundamentals across the three major hosting models: Minimal APIs, MVC Controllers, and Razor Pages.
-Each project is intentionally small, focused, and curriculum‑ready for teaching, demos, and modular learning.
+📘 MvcRoutingDemo — ASP.NET Core MVC Routing Module
+This project demonstrates ASP.NET Core MVC routing fundamentals, including conventional routing, attribute routing, route parameters, optional segments, constraints, and controller/action discovery. It is part of the RoutingReBuild solution and serves as the dedicated module for teaching MVC routing concepts.
+🎯 Learning Objectives
+By the end of this module, learners will understand:
 
-📁 Included Projects
-1. MinimalApiDemo
-Demonstrates:
+How MVC routing works in ASP.NET Core
 
-Basic route mapping with MapGet, MapPost, MapPut, MapDelete
+The difference between conventional routing and attribute routing
+How controllers and actions are mapped to URLs
 
-Route parameters and constraints
+How to use route parameters, optional parameters, and constraints
 
-Grouped routes
+How to organize routes cleanly for real‑world applications
 
-Minimal API conventions
+MvcRoutingDemo/
+│
+├── Controllers/
+│   ├── HomeController.cs
+│   ├── AdminController.cs
+│   ├── ProductsController.cs
+│   ├── OrdersController.cs
+│   └── BlogController.cs
+│
+├── Program.cs
+├── appsettings.json
+└── README.md   ← (this file)
+Each controller demonstrates a different routing scenario.
 
-2. MvcRoutingDemo
-1. Demonstrates:
+🚦 Routing Configuration (Program.cs
+The project uses conventional routing with the standard MVC pattern:
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-Controller‑based routing
+    This means:
 
-Attribute routing
+/ → HomeController.Index
 
-Conventional routing patterns
+/Products/List → ProductsController.List
 
-Route tokens and defaults
+/Orders/Details/5 → OrdersController.Details(5)
 
-Demonstrates:
+🧭 Attribute Routing Examples
+Several controllers use attribute routing to demonstrate more advanced patterns.
 
-Controller‑based routing
+ProductsController
+csharp
+[Route("products")]
+public class ProductsController : Controller
+{
+    [HttpGet("")]
+    public IActionResult Index()
 
-Attribute routing
+    [HttpGet("{id:int}")]
+    public IActionResult Details(int id)
+}
 
-Conventional routing patterns
+BlogController
+[Route("blog")]
+public class BlogController : Controller
+{
+    [HttpGet("{year:int}/{month:int}/{slug}")]
+    public IActionResult Post(int year, int month, string slug)
+🛠 Controllers Included
+Controller	Purpose
+HomeController	Basic landing routes
+AdminController	Demonstrates admin‑area style routing
+ProductsController	Attribute routing + constraints
+OrdersController	Conventional routing with parameters
+BlogController	Multi‑segment attribute routing
 
-Route tokens and defaults
-🧭 Solution Purpose
-This solution is designed as a teaching asset for understanding routing across the ASP.NET Core platform. Each project is isolated so learners can focus on one routing model at a time while still seeing how the models relate.
+🧪 How to Run the Demo
+Set MvcRoutingDemo as the startup project
 
-🚀 How to Run
-From the solution root:
+Run the application
+
+Test routes such as:
 
 Code
-cd MvcRoutingDemo
-dotnet run
+/Home/Index
+/Products
+/Products/3
+/Orders/Details/10
+/blog/2024/04/intro-to-routing
 
-Code
-cd RazorPagesRoutingDemo
-dotnet run
 
-Each project runs independently on its own Kestrel port.
-📚 What This Project Demonstrates
-Differences between Minimal API, MVC, and Razor Pages routing
 
-How ASP.NET Core resolves endpoints
 
-How route templates are parsed
 
-How route precedence works
 
-How to structure routing for clarity and maintainability
+    
+}
 
-🧩 Folder Structure
-AspNetCoreRoutingRebuild/
-│
-├── MinimalApiDemo/
-├── MvcRoutingDemo/
-├── RazorPagesRoutingDemo/
-│
-└── AspNetCoreRoutingRebuild.sln
+
+    
+
+
+
 
 
 

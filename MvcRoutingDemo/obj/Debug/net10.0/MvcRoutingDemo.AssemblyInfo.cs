@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MvcRoutingDemo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f99abc1b43d27dc14faae3d8ab6cbdb45d74057")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+025e7ddbb2d45bbb1a9bc0ab38e4fac690258db6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MvcRoutingDemo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MvcRoutingDemo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

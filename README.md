@@ -1,109 +1,115 @@
-📘 RazorPagesRoutingDemo — ASP.NET Core Razor Pages Routing Module
-This module demonstrates how routing works in ASP.NET Core Razor Pages, including page-based routing, folder conventions, route parameters, optional segments, and handler methods. It is part of the RoutingReBuild curriculum and serves as the dedicated module for teaching Razor Pages routing concepts.
+# Product Details Routing Enhancements
 
-🎯 Learning Objectives
-By the end of this module, learners will understand:
+## Overview
+This branch introduces enterprise‑grade routing behavior to the Product Details module.  
+The goal is to demonstrate how modern applications handle:
 
-How Razor Pages routing works in ASP.NET Core
+- Canonical URLs  
+- Slug validation  
+- Redirects for invalid product IDs  
+- Friendly error pages  
+- Clean, predictable routing patterns  
 
-How the @page directive defines routes
+These updates align the module with real‑world e‑commerce and API‑driven application design.
 
-How folder structure influences routing
+---
 
-How to use route parameters and optional segments
+## Features Added in This Branch
 
-How to implement handler methods (OnGet, OnPost, etc.)
+### 1. Canonical Slug Enforcement
+The Product Details page now validates the slug portion of the URL.
 
-How Razor Pages routing compares to MVC routing
+If the user enters a valid product ID but an incorrect slug, the system automatically redirects to the canonical URL.
 
-🏗 Project Structure
-RazorPagesRoutingDemo/
-│
-├── Pages/
-│   ├── Index.cshtml
-│   ├── Products/
-│   │   ├── Index.cshtml
-│   │   └── Details.cshtml
-│   ├── Blog/
-│   │   └── Post.cshtml
-│   └── Shared/
-│
-├── wwwroot/
-├── appsettings.json
-├── Program.cs
-└── README.md   ← (this file)
+**Example:**
 
-🚦 Razor Pages Routing Basics
-Razor Pages uses page-based routing, where each .cshtml file becomes an endpoint.
+Redirects to:
+/Products/ProductDetails/5/cell-phone
 
-Example: Basic Page Route
-@page
-<h1>Home Page</h1>
-This maps to:  /
+This mirrors the behavior of platforms like Amazon, Best Buy, and Walmart.
 
-🧭 Route Parameters
+---
 
-Example: Product Details Page
-Pages/Products/Details.cshtml:
-@page "{id:int}"
-@model DetailsModel
+### 2. Product Not Found Page
+A new Razor Page handles invalid product IDs:
 
-<h2>Product Details for @Model.Id</h2>
-This maps to:
+**Example:**
+Redirects to:
+/Products/ProductDetails/999/anything
+Redirects to:
 
-Code
-/Products/Details/5****
-🧩 Optional Segments
-@page "{year:int}/{month:int?}"
-Examples:
-/2024
-/2024/04
+/Products/ProductNotFound/999
 
-🛠 Handler Methods
-Razor Pages uses handler methods instead of controllers.
-public class IndexModel : PageModel
+
+This provides a clean, user‑friendly experience instead of a generic 404.
+
+---
+
+### 3. Updated ProductDetails Routing Logic
+The Product Details page now includes:
+
+- ID validation  
+- Canonical slug validation  
+- Redirects for invalid IDs  
+- Redirects for incorrect slugs  
+
+**Core logic:**
+
+```csharp
+if (Product == null)
+    return RedirectToPage("/Products/ProductNotFound", new { id });
+
+if (!string.Equals(slug, Product.Slug, StringComparison.OrdinalIgnoreCase))
 {
-    public void OnGet() { }
-
-    public IActionResult OnPost()
-    {
-        return RedirectToPage("Success");
-    }
+    return RedirectToPage("/Products/ProductDetails",
+        new { id = Product.Id, slug = Product.Slug });
 }
 
-📝 Comparison: Razor Pages vs MVC Routing
+This ensures:
 
-| Feature | Razor Pages | MVC |
-| --- | --- | --- |
-| Routing Style | File-based | Controller/action-based |
-| Route Definition | ``@page`` directive | ``MapControllerRoute`` or attributes |
-| Best For | Page-centric apps | Complex, multi-controller apps |
+Invalid IDs → NotFound page
 
-🧪 How to Run the Demo
-Set RazorPagesRoutingDemo as the startup project
+Valid ID + wrong slug → canonical redirect
 
-Run the application
+Valid ID + correct slug → product loads normally
+Testing the New Behavior
+Valid Product
+Code
+/Products/ProductDetails/5/cell-phone
 
-Test routes such as:
-/Products
-/Products/Details/3
-/Blog/Post/2024/04/intro-to-routing
+Wrong Slug
+/Products/ProductDetails/5/anything-here
 
-✅ Summary
-This module provides a clean, practical introduction to Razor Pages routing, preparing learners to understand how routing differs between Minimal APIs, MVC, and Razor Pages.
+Invalid Product ID
+/Products/ProductDetails/999/anything
 
+Product Not Found Page
+New Files Added
+Pages/Products/ProductNotFound.cshtml
+Pages/Products/ProductNotFound.cshtml.cs
+Updated Folder Structure
+Pages/
+ └── Products/
+      ├── ProductDetails.cshtml
+      ├── ProductDetails.cshtml.cs
+      ├── ProductNotFound.cshtml
+      └── ProductNotFound.cshtml.cs
 
+Summary
+This branch adds robust routing behavior that reflects real enterprise application patterns.
+It lays the foundation for future enhancements such as:
 
+Product List Page
 
+Search
 
+Categories
 
+Related Products
 
+Shared routing logic across product pages
 
-
-
-
-
-
+These improvements make the module more realistic, maintainable, and curriculum‑ready.
 
 
 

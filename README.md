@@ -95,21 +95,18 @@ Pages/
       ├── ProductNotFound.cshtml
       └── ProductNotFound.cshtml.cs
 
-Summary
-This branch adds robust routing behavior that reflects real enterprise application patterns.
+## **Summary**
+This branch adds robust routing behavior that reflects real enterprise application patterns.  
 It lays the foundation for future enhancements such as:
 
-Product List Page
-
-Search
-
-Categories
-
-Related Products
-
-Shared routing logic across product pages
+- Product List Page  
+- Search  
+- Categories  
+- Related Products  
+- Shared routing logic across product pages  
 
 These improvements make the module more realistic, maintainable, and curriculum‑ready.
+
 
 
 

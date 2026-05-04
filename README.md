@@ -1,37 +1,112 @@
-📘 MvcRoutingDemo — ASP.NET Core MVC Routing Module
+# Product Details Routing Enhancements
 
-This project demonstrates ASP.NET Core MVC routing fundamentals, including conventional routing, 
-attribute routing, route parameters, optional segments, constraints, and controller/action discovery.
-It is part of the RoutingReBuild solution and serves as the dedicated module for 
-teaching MVC routing concepts.
+## Overview
+This branch introduces enterprise‑grade routing behavior to the Product Details module.  
+The goal is to demonstrate how modern applications handle:
 
-Learning Objectives
-By the end of this module, learners will understand:
+- Canonical URLs  
+- Slug validation  
+- Redirects for invalid product IDs  
+- Friendly error pages  
+- Clean, predictable routing patterns  
 
-How MVC routing works in ASP.NET Core
+These updates align the module with real‑world e‑commerce and API‑driven application design.
 
-The difference between conventional routing and attribute routing
+---
 
-How controllers and actions are mapped to URLs
+## Features Added in This Branch
 
-How to use route parameters, optional parameters, and constraints
+### 1. Canonical Slug Enforcement
+The Product Details page now validates the slug portion of the URL.
 
-How to organize routes cleanly for real‑world applications
+If the user enters a valid product ID but an incorrect slug, the system automatically redirects to the canonical URL.
 
-🏗 Project Structure
+**Example:**
 
-MvcRoutingDemo/
-│
-├── Controllers/
-│   ├── HomeController.cs
-│   ├── AdminController.cs
-│   ├── ProductsController.cs
-│   ├── OrdersController.cs
-│   └── BlogController.cs
-│
-├── Program.cs
-├── appsettings.json
-└── README.md   ← (this file)
+Redirects to:
+/Products/ProductDetails/5/cell-phone
 
-Each controller demonstrates a different
+This mirrors the behavior of platforms like Amazon, Best Buy, and Walmart.
+
+---
+
+### 2. Product Not Found Page
+A new Razor Page handles invalid product IDs:
+
+**Example:**
+Redirects to:
+/Products/ProductDetails/999/anything
+Redirects to:
+
+/Products/ProductNotFound/999
+
+
+This provides a clean, user‑friendly experience instead of a generic 404.
+
+---
+
+### 3. Updated ProductDetails Routing Logic
+The Product Details page now includes:
+
+- ID validation  
+- Canonical slug validation  
+- Redirects for invalid IDs  
+- Redirects for incorrect slugs  
+
+**Core logic:**
+
+```csharp
+if (Product == null)
+    return RedirectToPage("/Products/ProductNotFound", new { id });
+
+if (!string.Equals(slug, Product.Slug, StringComparison.OrdinalIgnoreCase))
+{
+    return RedirectToPage("/Products/ProductDetails",
+        new { id = Product.Id, slug = Product.Slug });
+}
+
+This ensures:
+
+Invalid IDs → NotFound page
+
+Valid ID + wrong slug → canonical redirect
+
+Valid ID + correct slug → product loads normally
+Testing the New Behavior
+Valid Product
+Code
+/Products/ProductDetails/5/cell-phone
+
+Wrong Slug
+/Products/ProductDetails/5/anything-here
+
+Invalid Product ID
+/Products/ProductDetails/999/anything
+
+Product Not Found Page
+New Files Added
+Pages/Products/ProductNotFound.cshtml
+Pages/Products/ProductNotFound.cshtml.cs
+Updated Folder Structure
+Pages/
+ └── Products/
+      ├── ProductDetails.cshtml
+      ├── ProductDetails.cshtml.cs
+      ├── ProductNotFound.cshtml
+      └── ProductNotFound.cshtml.cs
+
+## **Summary**
+This branch adds robust routing behavior that reflects real enterprise application patterns.  
+It lays the foundation for future enhancements such as:
+
+- Product List Page  
+- Search  
+- Categories  
+- Related Products  
+- Shared routing logic across product pages  
+
+These improvements make the module more realistic, maintainable, and curriculum‑ready.
+
+
+
 

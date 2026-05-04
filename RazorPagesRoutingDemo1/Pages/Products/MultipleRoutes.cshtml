@@ -1,0 +1,11 @@
+﻿@page "{id:int}/{slug}"
+@model RazorPagesRoutingDemo.Pages.Products.MultipleRoutesModel
+
+<h2>Multiple Route Parameters Demo</h2>
+
+<div class="card p-3 mt-3">
+    <p><strong>Product ID:</strong> @Model.Id</p>
+    <p><strong>Slug:</strong> @Model.Slug</p>
+</div>
+
+<a asp-page="/Products/Index" class="btn btn-secondary mt-3">Back to Products</a>

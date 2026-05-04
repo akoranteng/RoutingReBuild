@@ -7,12 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalApiDemo", "MinimalAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcRoutingDemo", "MvcRoutingDemo\MvcRoutingDemo.csproj", "{3D4CB31A-E618-C936-7F7A-73C9FAFDFF7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesRoutingDemo", "RazorPagesRoutingDemo\RazorPagesRoutingDemo.csproj", "{031704AE-DDA0-DE16-7241-9C77EB93BB6A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesRoutingDemo1", "RazorPagesRoutingDemo1\RazorPagesRoutingDemo1.csproj", "{56F93A07-BB81-4F6B-8CD2-802E283E552C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +28,10 @@ Global
 		{3D4CB31A-E618-C936-7F7A-73C9FAFDFF7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D4CB31A-E618-C936-7F7A-73C9FAFDFF7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D4CB31A-E618-C936-7F7A-73C9FAFDFF7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{031704AE-DDA0-DE16-7241-9C77EB93BB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{031704AE-DDA0-DE16-7241-9C77EB93BB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{031704AE-DDA0-DE16-7241-9C77EB93BB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{031704AE-DDA0-DE16-7241-9C77EB93BB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56F93A07-BB81-4F6B-8CD2-802E283E552C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56F93A07-BB81-4F6B-8CD2-802E283E552C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56F93A07-BB81-4F6B-8CD2-802E283E552C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56F93A07-BB81-4F6B-8CD2-802E283E552C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

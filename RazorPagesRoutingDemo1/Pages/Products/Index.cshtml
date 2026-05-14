@@ -1,0 +1,24 @@
+﻿@page
+@model RazorPagesRoutingDemo1.Pages.Products.IndexModel
+
+<h1>Products</h1>
+
+@if (Model.Products is null || !Model.Products.Any())
+{
+    <p>No products available.</p>
+}
+else
+{
+    <ul>
+        @foreach (var product in Model.Products)
+        {
+            <li>
+                <a asp-page="/Products/ProductDetails"
+                   asp-route-id="@product.Id"
+                   asp-route-slug="@product.Slug">
+                    @product.Name
+                </a>
+            </li>
+        }
+    </ul>
+}

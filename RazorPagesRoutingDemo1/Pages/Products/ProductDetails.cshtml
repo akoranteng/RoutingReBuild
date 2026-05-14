@@ -1,0 +1,33 @@
+﻿@page "{id:int}/{slug?}"
+@model RazorPagesRoutingDemo1.Pages.Products.ProductDetailsModel
+
+<h1>@Model.Product?.Name</h1>
+
+<div class="product-details">
+
+    <div class="product-image">
+        <img src="@Model.Product?.ImageUrl" alt="@Model.Product?.Name" style="max-width:200px;" />
+    </div>
+
+    <div class="product-info">
+        <p><strong>Category:</strong> @Model.Product?.Category</p>
+        <p><strong>Price:</strong> $@Model.Product?.Price</p>
+
+        @if (Model.Product?.Stock > 0)
+        {
+            <p style="color:green;"><strong>In Stock:</strong> @Model.Product.Stock</p>
+        }
+        else
+        {
+            <p style="color:red;"><strong>Out of Stock</strong></p>
+        }
+
+        <p><strong>Description:</strong></p>
+        <p>@Model.Product?.Description</p>
+    </div>
+
+</div>
+
+<p>
+    <a asp-page="Index">Back to Products</a>
+</p>

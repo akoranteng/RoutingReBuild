@@ -1,0 +1,13 @@
+﻿@page "{id:int}"
+@model RazorPagesRoutingDemo1.Pages.Products.ProductNotFoundModel
+
+<h1>Product Not Found</h1>
+
+<p>
+    Sorry, we couldn’t find a product with ID <strong>@Model.Id</strong>.
+</p>
+
+<p>
+    <a asp-page="/Products/Index">Back to Products</a>
+</p>
+

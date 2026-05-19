@@ -1,112 +1,75 @@
-# Product Details Routing Enhancements
+ASP.NET Core Routing ReBuild — Razor Pages Product Catalog Demo
 
-## Overview
-This branch introduces enterprise‑grade routing behavior to the Product Details module.  
-The goal is to demonstrate how modern applications handle:
+# ASP.NET Core Routing ReBuild  
+### Razor Pages • Minimal APIs • MVC • Product Catalog Demo
 
-- Canonical URLs  
-- Slug validation  
-- Redirects for invalid product IDs  
-- Friendly error pages  
-- Clean, predictable routing patterns  
+The goal is to create a clean, modern, educational reference for ASP.NET Core routing, while also building a functional product catalog UI that demonstrates real‑world routing, filtering, and sorting behavior.
 
-These updates align the module with real‑world e‑commerce and API‑driven application design.
+## 🚀 Features Implemented (Razor Pages Module)
 
----
+### ✔ Product Catalog with Full Filtering Pipeline
+The Razor Pages demo now includes a complete, production‑style filtering system:
 
-## Features Added in This Branch
+- **Search** (by product name)
+- **Category Filter**
+- **Sort By** (Name, Price, Category)
+- **Sort Direction** (Ascending / Descending)
+- **All filters work together** using GET query parameters
 
-### 1. Canonical Slug Enforcement
-The Product Details page now validates the slug portion of the URL.
+Example URL:
 
-If the user enters a valid product ID but an incorrect slug, the system automatically redirects to the canonical URL.
+/Products?SearchTerm=tablet&Category=Electronics&SortBy=Price&SortDirection=asc
 
-**Example:**
+### ✔ Clean, Persistent UI State
+All dropdowns and inputs retain their values after filtering, thanks to:
 
-Redirects to:
-/Products/ProductDetails/5/cell-phone
+```razor
+selected="@(Model.SortBy == "Price")"
+Added realistic product images (tablet, speaker, etc.) stored under:
+Product Images
+wwwroot/images/products
 
-This mirrors the behavior of platforms like Amazon, Best Buy, and Walmart.
+Stable Routing Structure
+The Razor Pages module demonstrates:
 
----
+Page routing
 
-### 2. Product Not Found Page
-A new Razor Page handles invalid product IDs:
+Handler methods
 
-**Example:**
-Redirects to:
-/Products/ProductDetails/999/anything
-Redirects to:
+Query parameter binding
 
-/Products/ProductNotFound/999
+Clean URL patterns
 
+Separation of UI and PageModel logic
 
-This provides a clean, user‑friendly experience instead of a generic 404.
+RoutingReBuild/
+│
+├── MinimalApiRoutingDemo/
+├── MvcRoutingDemo/
+└── RazorPagesRoutingDemo/
+    ├── Pages/
+    │   └── Products/
+    │       ├── Index.cshtml
+    │       ├── Index.cshtml.cs
+    │       ├── Details.cshtml
+    │       └── Details.cshtml.cs
+    ├── Services/
+    └── wwwroot/images/products/
 
----
+🧠 Learning Goals
+This project is designed to reinforce:
 
-### 3. Updated ProductDetails Routing Logic
-The Product Details page now includes:
+ASP.NET Core routing fundamentals
 
-- ID validation  
-- Canonical slug validation  
-- Redirects for invalid IDs  
-- Redirects for incorrect slugs  
+Razor Pages handler methods
 
-**Core logic:**
+Query string binding
 
-```csharp
-if (Product == null)
-    return RedirectToPage("/Products/ProductNotFound", new { id });
+UI state persistence
 
-if (!string.Equals(slug, Product.Slug, StringComparison.OrdinalIgnoreCase))
-{
-    return RedirectToPage("/Products/ProductDetails",
-        new { id = Product.Id, slug = Product.Slug });
-}
+Clean separation of concerns
 
-This ensures:
+Building real‑world filtering/sorting pipelines
 
-Invalid IDs → NotFound page
-
-Valid ID + wrong slug → canonical redirect
-
-Valid ID + correct slug → product loads normally
-Testing the New Behavior
-Valid Product
-Code
-/Products/ProductDetails/5/cell-phone
-
-Wrong Slug
-/Products/ProductDetails/5/anything-here
-
-Invalid Product ID
-/Products/ProductDetails/999/anything
-
-Product Not Found Page
-New Files Added
-Pages/Products/ProductNotFound.cshtml
-Pages/Products/ProductNotFound.cshtml.cs
-Updated Folder Structure
-Pages/
- └── Products/
-      ├── ProductDetails.cshtml
-      ├── ProductDetails.cshtml.cs
-      ├── ProductNotFound.cshtml
-      └── ProductNotFound.cshtml.cs
-
-## **Summary**
-This branch adds robust routing behavior that reflects real enterprise application patterns.  
-It lays the foundation for future enhancements such as:
-
-- Product List Page  
-- Search  
-- Categories  
-- Related Products  
-- Shared routing logic across product pages  
-
-These improvements make the module more realistic, maintainable, and curriculum‑ready.
-
-
-
+Git workflow best practices
 

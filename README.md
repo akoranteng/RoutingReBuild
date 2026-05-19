@@ -1,4 +1,4 @@
-ASP.NET Core Routing ReBuild — Razor Pages Product Catalog Demo
+RoutingReBuild — Razor Pages Demo
 
 # ASP.NET Core Routing ReBuild  
 ### Razor Pages • Minimal APIs • MVC • Product Catalog Demo

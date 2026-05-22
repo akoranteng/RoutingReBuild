@@ -1,4 +1,7 @@
+using RazorPagesRoutingDemo1.Data;
 using RazorPagesRoutingDemo1.Services;
+using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +14,12 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IProductService, ProductService>();
 
+builder.Services.AddRazorPages();
+builder.Services.AddScoped<IProductService, ProductService>();
+
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
@@ -26,5 +35,6 @@ app.UseRouting();
 
 // Map Razor Pages endpoints
 app.MapRazorPages();
+
 
 app.Run();

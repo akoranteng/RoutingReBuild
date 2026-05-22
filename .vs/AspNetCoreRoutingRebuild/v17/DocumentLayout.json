@@ -1,0 +1,141 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\MSlearn\\RoutingReBuild\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|c:\\mslearn\\routingrebuild\\razorpagesroutingdemo1\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|solutionrelative:razorpagesroutingdemo1\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|c:\\mslearn\\routingrebuild\\razorpagesroutingdemo1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|solutionrelative:razorpagesroutingdemo1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|c:\\mslearn\\routingrebuild\\razorpagesroutingdemo1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|solutionrelative:razorpagesroutingdemo1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|c:\\mslearn\\routingrebuild\\razorpagesroutingdemo1\\migrations\\20260521193945_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|solutionrelative:razorpagesroutingdemo1\\migrations\\20260521193945_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|c:\\mslearn\\routingrebuild\\razorpagesroutingdemo1\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|solutionrelative:razorpagesroutingdemo1\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|c:\\mslearn\\routingrebuild\\razorpagesroutingdemo1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|solutionrelative:razorpagesroutingdemo1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|c:\\mslearn\\routingrebuild\\razorpagesroutingdemo1\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F93A07-BB81-4F6B-8CD2-802E283E552C}|RazorPagesRoutingDemo1\\RazorPagesRoutingDemo1.csproj|solutionrelative:razorpagesroutingdemo1\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20260521193945_InitialCreate.cs",
+              "DocumentMoniker": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Migrations\\20260521193945_InitialCreate.cs",
+              "RelativeDocumentMoniker": "RazorPagesRoutingDemo1\\Migrations\\20260521193945_InitialCreate.cs",
+              "ToolTip": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Migrations\\20260521193945_InitialCreate.cs",
+              "RelativeToolTip": "RazorPagesRoutingDemo1\\Migrations\\20260521193945_InitialCreate.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T20:14:14.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "RazorPagesRoutingDemo1\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "RazorPagesRoutingDemo1\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T20:12:51.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\appsettings.json",
+              "RelativeDocumentMoniker": "RazorPagesRoutingDemo1\\appsettings.json",
+              "ToolTip": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\appsettings.json",
+              "RelativeToolTip": "RazorPagesRoutingDemo1\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-21T20:05:49.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Program.cs",
+              "RelativeDocumentMoniker": "RazorPagesRoutingDemo1\\Program.cs",
+              "ToolTip": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Program.cs",
+              "RelativeToolTip": "RazorPagesRoutingDemo1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T19:59:25.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "RazorPagesRoutingDemo1\\Services\\ProductService.cs",
+              "ToolTip": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Services\\ProductService.cs",
+              "RelativeToolTip": "RazorPagesRoutingDemo1\\Services\\ProductService.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAUwGQAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T17:30:56.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "RazorPagesRoutingDemo1\\Models\\Product.cs",
+              "ToolTip": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Models\\Product.cs",
+              "RelativeToolTip": "RazorPagesRoutingDemo1\\Models\\Product.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAIBMwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T12:45:54.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "RazorPagesRoutingDemo1\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\MSlearn\\RoutingReBuild\\RazorPagesRoutingDemo1\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "RazorPagesRoutingDemo1\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T12:23:09.091Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

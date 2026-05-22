@@ -1,55 +1,116 @@
-﻿using RazorPagesRoutingDemo1.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using RazorPagesRoutingDemo1.Models;
+using RazorPagesRoutingDemo1.Services;
+using RazorPagesRoutingDemo1.Data;
 
-namespace RazorPagesRoutingDemo1.Services
+public class ProductService : IProductService
 {
-    public class ProductService : IProductService
-    {
-        private readonly List<Product> _products = new()
-        {
-            new Product
-            {
-                Id = 1,
-                Name = "Cell Phone",
-                Slug = "cell-phone",
-                Category = "Electronics",
-                Price = 699,
-                Stock = 12,
-                ImageUrl = "/images/cellphone.png",
-                Description = "A modern smartphone with a high‑resolution display and long‑lasting battery."
-            },
-            new Product
-            {
-                Id = 2,
-                Name = "Laptop",
-                Slug = "laptop",
-                Category = "Computers",
-                Price = 1299,
-                Stock = 5,
-                ImageUrl = "/images/laptop.png",
-                Description = "A lightweight laptop designed for productivity and performance."
-            },
-            new Product
-            {
-                Id = 3,
-                Name = "Headphones",
-                Slug = "headphones",
-                Category = "Audio",
-                Price = 199,
-                Stock = 0,
-                ImageUrl = "/images/headphones.png",
-                Description = "Noise‑cancelling over‑ear headphones with premium sound quality."
-            }
-        };
+    private readonly ApplicationDbContext _context;
 
-        public Task<List<Product>> GetAllProductsAsync()
+    public ProductService(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    // ---------------------------------------------------------
+    // PAGINATION + FILTERING + SORTING
+    // ---------------------------------------------------------
+    public async Task<(IEnumerable<Product> Items, int TotalCount)> GetProductsAsync(
+        string? search,
+        string? category,
+        string? sortBy,
+        string? sortDirection,
+        int page,
+        int pageSize)
+    {
+        var query = _context.Products.AsQueryable();
+
+        // Filtering
+        if (!string.IsNullOrWhiteSpace(search))
         {
-            return Task.FromResult(_products);
+            query = query.Where(p =>
+                p.Name.Contains(search) ||
+                p.Description.Contains(search));
         }
 
-        public Task<Product?> GetProductByIdAsync(int id)
+        if (!string.IsNullOrWhiteSpace(category))
         {
-            var product = _products.FirstOrDefault(p => p.Id == id);
-            return Task.FromResult(product);
+            query = query.Where(p => p.Category == category);
+        }
+
+        // Sorting
+        query = (sortBy, sortDirection) switch
+        {
+            ("name", "asc") => query.OrderBy(p => p.Name),
+            ("name", "desc") => query.OrderByDescending(p => p.Name),
+            ("price", "asc") => query.OrderBy(p => p.Price),
+            ("price", "desc") => query.OrderByDescending(p => p.Price),
+            _ => query.OrderBy(p => p.Id)
+        };
+
+        // Total count BEFORE pagination
+        var totalCount = await query.CountAsync();
+
+        // Pagination
+        var items = await query
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return (items, totalCount);
+    }
+
+    // ---------------------------------------------------------
+    // CATEGORIES
+    // ---------------------------------------------------------
+    public async Task<IEnumerable<string>> GetCategoriesAsync()
+    {
+        return await _context.Products
+            .Select(p => p.Category)
+            .Distinct()
+            .OrderBy(c => c)
+            .ToListAsync();
+    }
+
+    // ---------------------------------------------------------
+    // SEARCH
+    // ---------------------------------------------------------
+    public async Task<IEnumerable<Product>> SearchProductsAsync(string searchTerm)
+    {
+        return await _context.Products
+            .Where(p =>
+                p.Name.Contains(searchTerm) ||
+                p.Description.Contains(searchTerm))
+            .ToListAsync();
+    }
+
+    // ---------------------------------------------------------
+    // CRUD
+    // ---------------------------------------------------------
+    public async Task<Product?> GetProductByIdAsync(int id)
+    {
+        return await _context.Products.FindAsync(id);
+    }
+
+    public async Task AddProductAsync(Product product)
+    {
+        _context.Products.Add(product);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task UpdateProductAsync(Product product)
+    {
+        _context.Products.Update(product);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task DeleteProductAsync(int id)
+    {
+        var product = await _context.Products.FindAsync(id);
+        if (product != null)
+        {
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
         }
     }
 }

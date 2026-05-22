@@ -1,24 +1,86 @@
 ﻿@page
 @model RazorPagesRoutingDemo1.Pages.Products.IndexModel
 
-<h1>Products</h1>
+<h2 class="mb-4">Products</h2>
 
-@if (Model.Products is null || !Model.Products.Any())
-{
-    <p>No products available.</p>
-}
-else
-{
-    <ul>
-        @foreach (var product in Model.Products)
+<form method="get" class="row mb-4">
+
+    <!-- Search box -->
+    <div class="col-md-3">
+        <input type="text"
+               name="SearchTerm"
+               value="@Model.SearchTerm"
+               placeholder="Search products..."
+               class="form-control" />
+    </div>
+
+
+
+    <!-- Category dropdown -->
+    <div class="col-md-3">
+        <select name="Category" class="form-select">
+            <option value="">All Categories</option>
+            @foreach (var cat in Model.Categories)
+            {
+                <option value="@cat" selected="@(Model.Category == cat)">
+                    @cat
+                </option>
+            }
+        </select>
+    </div>
+
+    <!-- Sort By dropdown -->
+    <div class="col-md-3">
+        <select name="SortBy" class="form-select">
+            <option value="">Sort By</option>
+            <option value="Name" selected="@(Model.SortBy == "Name")">Name</option>
+            <option value="Price" selected="@(Model.SortBy == "Price")">Price</option>
+            <option value="Category" selected="@(Model.SortBy == "Category")">Category</option>
+        </select>
+    </div>
+
+    <!-- Sort Direction dropdown -->
+    <div class="col-md-2">
+        <select name="SortDirection" class="form-select">
+            <option value="asc" selected="@(Model.SortDirection == "asc")">Ascending</option>
+            <option value="desc" selected="@(Model.SortDirection == "desc")">Descending</option>
+        </select>
+    </div>
+
+    <!-- Submit button -->
+    <div class="col-md-1">
+        <button type="submit" class="btn btn-primary w-100">Go</button>
+    </div>
+
+</form>
+
+<!-- Product cards -->
+<div class="row">
+    @if (Model.Products.Count == 0)
+    {
+        <p>No products found.</p>
+    }
+    else
+    {
+        foreach (var product in Model.Products)
         {
-            <li>
-                <a asp-page="/Products/ProductDetails"
-                   asp-route-id="@product.Id"
-                   asp-route-slug="@product.Slug">
-                    @product.Name
-                </a>
-            </li>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" />
+
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">@product.Description</p>
+                        <p class="fw-bold">$@product.Price</p>
+
+                        <a asp-page="/Products/Details"
+                           asp-route-id="@product.Id"
+                           class="btn btn-outline-primary">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
         }
-    </ul>
-}
+    }
+</div>

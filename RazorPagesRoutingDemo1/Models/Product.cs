@@ -1,21 +1,18 @@
 ﻿namespace RazorPagesRoutingDemo1.Models
 {
+
     public class Product
     {
-        public int Id { get; set; }
-
+        public int Id { get; set; }   // REQUIRED primary key
+        
         public string Name { get; set; } = string.Empty;
-
         public string Slug { get; set; } = string.Empty;
-
-        public string Category { get; set; } = string.Empty;
-
+        public string Category { get; set; } = string.Empty;   // ← KEEP THIS ONE
         public decimal Price { get; set; }
-
         public int Stock { get; set; }
-
         public string ImageUrl { get; set; } = string.Empty;
-
         public string Description { get; set; } = string.Empty;
     }
+
+
 }

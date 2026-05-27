@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MSlearn\\RoutingReBuild\\MvcRoutingDemo\\MvcRoutingDemo.csproj",
+      "projectUniqueName": "C:\\MSlearn\\RoutingWorkShop\\MvcRoutingDemo\\MvcRoutingDemo.csproj",
       "projectName": "MvcRoutingDemo",
-      "projectPath": "C:\\MSlearn\\RoutingReBuild\\MvcRoutingDemo\\MvcRoutingDemo.csproj",
+      "projectPath": "C:\\MSlearn\\RoutingWorkShop\\MvcRoutingDemo\\MvcRoutingDemo.csproj",
       "packagesPath": "C:\\Users\\AKora\\.nuget\\packages\\",
-      "outputPath": "C:\\MSlearn\\RoutingReBuild\\MvcRoutingDemo\\obj\\",
+      "outputPath": "C:\\MSlearn\\RoutingWorkShop\\MvcRoutingDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages",

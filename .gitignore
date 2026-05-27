@@ -1,0 +1,14 @@
+# Ignore Visual Studio working folder
+.vs/
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+
+# Ignore local database files
+*.db
+*.sqlite

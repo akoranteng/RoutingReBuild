@@ -556,11 +556,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MSlearn\\RoutingReBuild\\MinimalApiDemo\\MinimalApiDemo.csproj",
+      "projectUniqueName": "C:\\MSlearn\\RoutingWorkShop\\MinimalApiDemo\\MinimalApiDemo.csproj",
       "projectName": "MinimalApiDemo",
-      "projectPath": "C:\\MSlearn\\RoutingReBuild\\MinimalApiDemo\\MinimalApiDemo.csproj",
+      "projectPath": "C:\\MSlearn\\RoutingWorkShop\\MinimalApiDemo\\MinimalApiDemo.csproj",
       "packagesPath": "C:\\Users\\AKora\\.nuget\\packages\\",
-      "outputPath": "C:\\MSlearn\\RoutingReBuild\\MinimalApiDemo\\obj\\",
+      "outputPath": "C:\\MSlearn\\RoutingWorkShop\\MinimalApiDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages",

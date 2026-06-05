@@ -5,8 +5,9 @@ namespace RazorPagesRoutingDemo1.Pages
 {
     public class IndexModel : PageModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            return RedirectToPage("/Products/Index");
         }
     }
 }
